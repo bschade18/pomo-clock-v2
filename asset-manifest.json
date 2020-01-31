@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pomo-clock-v2/static/css/main.83a95813.chunk.css",
+    "main.js": "/pomo-clock-v2/static/js/main.3f747f8f.chunk.js",
+    "main.js.map": "/pomo-clock-v2/static/js/main.3f747f8f.chunk.js.map",
+    "runtime~main.js": "/pomo-clock-v2/static/js/runtime~main.ae3a045c.js",
+    "runtime~main.js.map": "/pomo-clock-v2/static/js/runtime~main.ae3a045c.js.map",
+    "static/js/2.08ac96b6.chunk.js": "/pomo-clock-v2/static/js/2.08ac96b6.chunk.js",
+    "static/js/2.08ac96b6.chunk.js.map": "/pomo-clock-v2/static/js/2.08ac96b6.chunk.js.map",
+    "index.html": "/pomo-clock-v2/index.html",
+    "precache-manifest.55c65c3fa486bda5b0cae27ac33df080.js": "/pomo-clock-v2/precache-manifest.55c65c3fa486bda5b0cae27ac33df080.js",
+    "service-worker.js": "/pomo-clock-v2/service-worker.js",
+    "static/css/main.83a95813.chunk.css.map": "/pomo-clock-v2/static/css/main.83a95813.chunk.css.map"
+  }
+}
