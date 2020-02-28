@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/pomo-clock-v2/static/css/main.83a95813.chunk.css",
-    "main.js": "/pomo-clock-v2/static/js/main.3f747f8f.chunk.js",
-    "main.js.map": "/pomo-clock-v2/static/js/main.3f747f8f.chunk.js.map",
+    "main.css": "/pomo-clock-v2/static/css/main.5d2e6037.chunk.css",
+    "main.js": "/pomo-clock-v2/static/js/main.5ddb8a43.chunk.js",
+    "main.js.map": "/pomo-clock-v2/static/js/main.5ddb8a43.chunk.js.map",
     "runtime~main.js": "/pomo-clock-v2/static/js/runtime~main.ae3a045c.js",
     "runtime~main.js.map": "/pomo-clock-v2/static/js/runtime~main.ae3a045c.js.map",
-    "static/js/2.08ac96b6.chunk.js": "/pomo-clock-v2/static/js/2.08ac96b6.chunk.js",
-    "static/js/2.08ac96b6.chunk.js.map": "/pomo-clock-v2/static/js/2.08ac96b6.chunk.js.map",
+    "static/js/2.4829d991.chunk.js": "/pomo-clock-v2/static/js/2.4829d991.chunk.js",
+    "static/js/2.4829d991.chunk.js.map": "/pomo-clock-v2/static/js/2.4829d991.chunk.js.map",
     "index.html": "/pomo-clock-v2/index.html",
-    "precache-manifest.f6acf5e47932457580b76a6a120ea745.js": "/pomo-clock-v2/precache-manifest.f6acf5e47932457580b76a6a120ea745.js",
+    "precache-manifest.fc2eaa62e55dba5d36d2681dc1712188.js": "/pomo-clock-v2/precache-manifest.fc2eaa62e55dba5d36d2681dc1712188.js",
     "service-worker.js": "/pomo-clock-v2/service-worker.js",
-    "static/css/main.83a95813.chunk.css.map": "/pomo-clock-v2/static/css/main.83a95813.chunk.css.map"
+    "static/css/main.5d2e6037.chunk.css.map": "/pomo-clock-v2/static/css/main.5d2e6037.chunk.css.map"
   }
 }
