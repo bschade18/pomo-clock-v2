@@ -1,38 +1,34 @@
-import React, { Component } from "react";
+import React from "react";
 
-class SessionLength extends Component {
-  render() {
-    return (
-      <div>
-        <div class="row">
-          <div class="col-6">
-            <p id="break-label">Break Length</p>
-            <p id="break-length">{this.props.breakLength}</p>
-            <div class="break-button">
-              <p id="break-decrement" onClick={this.props.breakDec}>
-                <i class="fas fa-minus"></i>
-              </p>
-              <p id="break-increment" onClick={this.props.breakInc}>
-                <i class="fas fa-plus"></i>
-              </p>
-            </div>
-          </div>
-          <div class="col-6">
-            <p id="session-label">Session Length</p>
-            <p id="session-length">{this.props.sessionLength}</p>
-            <div class="session-button">
-              <p id="session-decrement" onClick={this.props.sessionDec}>
-                <i class="fas fa-minus"></i>
-              </p>
-              <p id="session-increment" onClick={this.props.sessionInc}>
-                <i class="fas fa-plus"></i>
-              </p>
-            </div>
-          </div>
+function SessionLength(props) {
+  return (
+    <div className="row">
+      <div className="col-6">
+        <p id="break-label">Break Length</p>
+        <p id="break-length">{props.breakLength}</p>
+        <div className="interval-btns">
+          <p id="break-decrement" onClick={props.breakDecrement}>
+            <i className="fas fa-minus"></i>
+          </p>
+          <p id="break-increment" onClick={props.breakIncrement}>
+            <i className="fas fa-plus"></i>
+          </p>
         </div>
       </div>
-    );
-  }
+      <div className="col-6">
+        <p id="session-label">Session Length</p>
+        <p id="session-length">{props.sessionLength}</p>
+        <div className="interval-btns">
+          <p id="session-decrement" onClick={props.sessionDecrement}>
+            <i className="fas fa-minus"></i>
+          </p>
+          <p id="session-increment" onClick={props.sessionIncrement}>
+            <i className="fas fa-plus"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default SessionLength;

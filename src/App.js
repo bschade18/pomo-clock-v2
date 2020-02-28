@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
-import ControlClock from "./components/ControlClock";
-import SessionLength from "./components/SessionLength";
 import Clock from "./components/Clock";
+import SessionLength from "./components/SessionLength";
+import ControlClock from "./components/ControlClock";
 
 class App extends React.Component {
   constructor(props) {
@@ -25,24 +25,48 @@ class App extends React.Component {
     return minutes + ":" + seconds;
   };
 
+  startPause = () => {
+    if (!this.state.start) {
+      this.startCountdown();
+      this.setState({
+        start: true
+      });
+    } else {
+      this.setState({
+        start: false
+      });
+      clearInterval(this.state.intervalID);
+    }
+  };
+
+  reset = () => {
+    this.pauseBeep();
+    this.setState({
+      breakLength: 5,
+      sessionLength: 25,
+      timer: 1500,
+      start: false,
+      timerLabel: "Session"
+    });
+    clearInterval(this.state.intervalID);
+  };
+
   startCountdown = () => {
     this.setState({
       intervalID: setInterval(() => {
         this.countdown();
-        this.clockUpdater();
+        this.switchSession();
       }, 1000)
     });
   };
 
   countdown = () => {
-    this.setState(prevState => {
-      return {
-        timer: prevState.timer - 1
-      };
+    this.setState({
+      timer: this.state.timer - 1
     });
   };
 
-  clockUpdater = () => {
+  switchSession = () => {
     if (this.state.timer < 0) {
       if (this.state.timerLabel === "Session") {
         this.setState({
@@ -60,61 +84,51 @@ class App extends React.Component {
     }
   };
 
-  breakInc = () => {
-    if (this.state.breakLength <= 59 && this.state.start === false) {
+  breakIncrement = () => {
+    const { breakLength, start } = this.state;
+
+    if (breakLength <= 59 && start === false) {
       this.setState({
-        breakLength: this.state.breakLength + 1
+        breakLength: breakLength + 1
       });
     }
   };
 
-  breakDec = () => {
-    if (this.state.breakLength >= 2 && this.state.start === false) {
+  breakDecrement = () => {
+    const { breakLength, start } = this.state;
+
+    if (breakLength >= 2 && start === false) {
       this.setState({
-        breakLength: this.state.breakLength - 1
-      });
-    }
-  };
-  sessionInc = () => {
-    if (this.state.sessionLength <= 59 && this.state.start === false) {
-      this.setState({
-        sessionLength: this.state.sessionLength + 1,
-        timer: this.state.timer + 60
-      });
-    }
-  };
-  sessionDec = () => {
-    if (this.state.sessionLength >= 2 && this.state.start === false) {
-      this.setState({
-        sessionLength: this.state.sessionLength - 1,
-        timer: this.state.timer - 60
-      });
-    }
-  };
-  startPause = () => {
-    if (this.state.start) {
-      this.setState({
-        start: false
-      });
-      clearInterval(this.state.intervalID);
-    } else {
-      this.startCountdown();
-      this.setState({
-        start: true
+        breakLength: breakLength - 1
       });
     }
   };
 
-  reset = () => {
-    this.pauseBeep();
-    this.setState({
-      breakLength: 5,
-      sessionLength: 25,
-      timer: 1500,
-      start: false,
-      timerLabel: "Session"
-    });
-    clearInterval(this.state.intervalID);
+  sessionIncrement = () => {
+    const { sessionLength, start, timer } = this.state;
+
+    if (sessionLength <= 59 && start === false) {
+      this.setState({
+        sessionLength: sessionLength + 1,
+        timer: timer + 60
+      });
+    }
+  };
+
+  sessionDecrement = () => {
+    const { sessionLength, start, timer } = this.state;
+
+    if (sessionLength >= 2 && start === false) {
+      this.setState({
+        sessionLength: sessionLength - 1,
+        timer: timer - 60
+      });
+    }
+  };
+
+  playBeep = () => {
+    const beep = document.getElementById("beep");
+    beep.play();
   };
 
   pauseBeep = () => {
@@ -123,21 +137,16 @@ class App extends React.Component {
     beep.currentTime = 0;
   };
 
-  playBeep = () => {
-    const beep = document.getElementById("beep");
-    beep.play();
-  };
-
   render() {
     return (
       <div>
         <Clock clock={this.clock()} timerLabel={this.state.timerLabel} />
         <SessionLength
           breakLength={this.state.breakLength}
-          breakInc={this.breakInc}
-          breakDec={this.breakDec}
-          sessionInc={this.sessionInc}
-          sessionDec={this.sessionDec}
+          breakIncrement={this.breakIncrement}
+          breakDecrement={this.breakDecrement}
+          sessionIncrement={this.sessionIncrement}
+          sessionDecrement={this.sessionDecrement}
           sessionLength={this.state.sessionLength}
         />
         <ControlClock startPause={this.startPause} reset={this.reset} />

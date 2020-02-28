@@ -21,19 +21,56 @@ body {
   color: #ffd700;
   margin: 0 auto;
 }
-#title,
-#timer-label {
-  text-align: center;
+
+#title {
   font-size: 35px;
 }
+
 #timer-label {
   font-size: 30px;
+}
+
+.heading {
+  text-align: center;
+  font-size: 35px;
 }
 
 .row::after {
   content: "";
   clear: both;
   display: table;
+}
+
+#break-label,
+#session-label,
+#break-length,
+#session-length {
+  text-align: center;
+  font-size: 25px;
+}
+
+#break-decrement,
+#break-increment,
+#session-decrement,
+#session-increment {
+  display: inline;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.interval-btns {
+  text-align: center;
+}
+
+.controls {
+  text-align: center;
+  font-size: 20px;
+}
+
+#play-pause-btn,
+#reset-btn {
+  display: inline;
+  margin: 15px;
 }
 
 .col-1 {
@@ -76,39 +113,4 @@ body {
 [class*="col-"] {
   float: left;
   padding: 15px;
-}
-#break-label,
-#session-label,
-#break-length,
-#session-length {
-  text-align: center;
-  font-size: 25px;
-}
-#break-decrement,
-#break-increment {
-  display: inline;
-  padding: 20px;
-  font-size: 20px;
-}
-#session-decrement,
-#session-increment {
-  display: inline;
-  padding: 20px;
-  font-size: 20px;
-}
-.break-button {
-  text-align: center;
-}
-.session-button {
-  text-align: center;
-}
-
-#start-stop,
-#reset {
-  display: inline;
-  padding: 15px;
-}
-.start-reset-btn {
-  text-align: center;
-  font-size: 20px;
 }
