@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "17ff13c1c0b00dfa02c727f4d1ca7c22",
+    "revision": "d286ce55d90105d6f6429a9763c03c5e",
     "url": "/pomo-clock-v2/index.html"
   },
   {
-    "revision": "d4955cb3870bf2428aeb",
-    "url": "/pomo-clock-v2/static/css/main.5d2e6037.chunk.css"
+    "revision": "7f6b81d2b7d29469fd79",
+    "url": "/pomo-clock-v2/static/css/main.f9cc52a7.chunk.css"
   },
   {
     "revision": "dae6f75b6433d06f1a6f",
     "url": "/pomo-clock-v2/static/js/2.4829d991.chunk.js"
   },
   {
-    "revision": "d4955cb3870bf2428aeb",
-    "url": "/pomo-clock-v2/static/js/main.5ddb8a43.chunk.js"
+    "revision": "7f6b81d2b7d29469fd79",
+    "url": "/pomo-clock-v2/static/js/main.47d3fea9.chunk.js"
   },
   {
     "revision": "59ad36c2f4cf25a01834",
