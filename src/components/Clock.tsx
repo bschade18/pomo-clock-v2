@@ -1,6 +1,12 @@
 import React from "react";
 
-function Clock(props) {
+
+type Props = {
+  timerLabel: string,
+  clock: string
+}
+
+function Clock({timerLabel, clock}: Props) {
   return (
     <div>
       <br />
@@ -8,9 +14,9 @@ function Clock(props) {
         Pomodoro Clock
       </h1>
       <p id="timer-label" className="heading">
-        {props.timerLabel}
+        {timerLabel}
       </p>
-      <div id="time-left">{props.clock}</div>
+      <div id="time-left">{clock}</div>
     </div>
   );
 }

@@ -1,6 +1,16 @@
 import React from "react";
 
-function SessionLength(props) {
+
+type Props = {
+  breakLength: string,
+  breakDecrement: () => void,
+  breakIncrement: () => void,
+  sessionLength: string,
+  sessionDecrement: () => void,
+  sessionIncrement: () => void
+}
+
+function SessionLength({breakLength, breakDecrement, breakIncrement, sessionLength, sessionDecrement, sessionIncrement}: Props) {
   return (
     <div className="row">
       <div className="col-6">
@@ -8,20 +18,20 @@ function SessionLength(props) {
           Break Length
         </p>
         <p id="break-length" className="interval-length">
-          {props.breakLength}
+          {breakLength}
         </p>
         <div className="interval-btn-container">
           <p
             id="break-decrement"
             className="interval-btn"
-            onClick={props.breakDecrement}
+            onClick={breakDecrement}
           >
             <i className="fas fa-minus"></i>
           </p>
           <p
             id="break-increment"
             className="interval-btn"
-            onClick={props.breakIncrement}
+            onClick={breakIncrement}
           >
             <i className="fas fa-plus"></i>
           </p>
@@ -32,20 +42,20 @@ function SessionLength(props) {
           Session Length
         </p>
         <p id="session-length" className="interval-length">
-          {props.sessionLength}{" "}
+          {sessionLength}{" "}
         </p>
         <div className="interval-btn-container">
           <p
             id="session-decrement"
             className="interval-btn"
-            onClick={props.sessionDecrement}
+            onClick={sessionDecrement}
           >
             <i className="fas fa-minus"></i>
           </p>
           <p
             id="session-increment"
             className="interval-btn"
-            onClick={props.sessionIncrement}
+            onClick={sessionIncrement}
           >
             <i className="fas fa-plus"></i>
           </p>
