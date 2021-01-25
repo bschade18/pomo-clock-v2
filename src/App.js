@@ -1,39 +1,39 @@
-import React from "react";
-import "./App.css";
-import Clock from "./components/Clock";
-import SessionLength from "./components/SessionLength";
-import ControlClock from "./components/ControlClock";
+import React from 'react';
+import './App.css';
+import Clock from './components/Clock';
+import SessionLength from './components/SessionLength';
+import ControlClock from './components/ControlClock';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      timerLabel: "Session",
+      timerLabel: 'Session',
       breakLength: 5,
       sessionLength: 25,
       timer: 1500,
       start: false,
-      intervalID: ""
+      intervalID: '',
     };
   }
 
   clock = () => {
     let minutes = Math.floor(this.state.timer / 60);
     let seconds = this.state.timer - minutes * 60;
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    seconds = seconds < 10 ? "0" + seconds : seconds;
-    return minutes + ":" + seconds;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    return minutes + ':' + seconds;
   };
 
   startPause = () => {
     if (!this.state.start) {
       this.startCountdown();
       this.setState({
-        start: true
+        start: true,
       });
     } else {
       this.setState({
-        start: false
+        start: false,
       });
       clearInterval(this.state.intervalID);
     }
@@ -46,7 +46,7 @@ class App extends React.Component {
       sessionLength: 25,
       timer: 1500,
       start: false,
-      timerLabel: "Session"
+      timerLabel: 'Session',
     });
     clearInterval(this.state.intervalID);
   };
@@ -56,28 +56,28 @@ class App extends React.Component {
       intervalID: setInterval(() => {
         this.countdown();
         this.switchSession();
-      }, 1000)
+      }, 1000),
     });
   };
 
   countdown = () => {
     this.setState({
-      timer: this.state.timer - 1
+      timer: this.state.timer - 1,
     });
   };
 
   switchSession = () => {
     if (this.state.timer < 0) {
-      if (this.state.timerLabel === "Session") {
+      if (this.state.timerLabel === 'Session') {
         this.setState({
           timer: this.state.breakLength * 60,
-          timerLabel: "Break"
+          timerLabel: 'Break',
         });
         this.playBeep();
       } else {
         this.setState({
           timer: this.state.sessionLength * 60,
-          timerLabel: "Session"
+          timerLabel: 'Session',
         });
         this.playBeep();
       }
@@ -89,7 +89,7 @@ class App extends React.Component {
 
     if (breakLength <= 59 && start === false) {
       this.setState({
-        breakLength: breakLength + 1
+        breakLength: breakLength + 1,
       });
     }
   };
@@ -99,7 +99,7 @@ class App extends React.Component {
 
     if (breakLength >= 2 && start === false) {
       this.setState({
-        breakLength: breakLength - 1
+        breakLength: breakLength - 1,
       });
     }
   };
@@ -110,7 +110,7 @@ class App extends React.Component {
     if (sessionLength <= 59 && start === false) {
       this.setState({
         sessionLength: sessionLength + 1,
-        timer: timer + 60
+        timer: timer + 60,
       });
     }
   };
@@ -121,18 +121,18 @@ class App extends React.Component {
     if (sessionLength >= 2 && start === false) {
       this.setState({
         sessionLength: sessionLength - 1,
-        timer: timer - 60
+        timer: timer - 60,
       });
     }
   };
 
   playBeep = () => {
-    const beep = document.getElementById("beep");
+    const beep = document.getElementById('beep');
     beep.play();
   };
 
   pauseBeep = () => {
-    const beep = document.getElementById("beep");
+    const beep = document.getElementById('beep');
     beep.pause();
     beep.currentTime = 0;
   };

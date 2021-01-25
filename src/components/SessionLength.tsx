@@ -1,7 +1,7 @@
 import React from "react";
 
 
-type Props = {
+interface sessionLengthProps {
   breakLength: string,
   breakDecrement: () => void,
   breakIncrement: () => void,
@@ -10,7 +10,7 @@ type Props = {
   sessionIncrement: () => void
 }
 
-function SessionLength({breakLength, breakDecrement, breakIncrement, sessionLength, sessionDecrement, sessionIncrement}: Props) {
+function SessionLength({breakLength, breakDecrement, breakIncrement, sessionLength, sessionDecrement, sessionIncrement}: sessionLengthProps) {
   return (
     <div className="row">
       <div className="col-6">

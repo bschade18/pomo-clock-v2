@@ -1,11 +1,12 @@
 import React from 'react';
 
-type Props = {
+
+interface controlClockProps {
   startPause: () => void,
   reset: () => void,
-};
+}
 
-function ControlClock({ startPause, reset }: Props) {
+function ControlClock({ startPause, reset }: controlClockProps) {
   return (
     <div className="row">
       <div className="col-12">

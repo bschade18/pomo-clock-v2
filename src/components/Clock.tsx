@@ -1,12 +1,11 @@
 import React from "react";
 
-
-type Props = {
+interface clockProps {
   timerLabel: string,
   clock: string
 }
 
-function Clock({timerLabel, clock}: Props) {
+function Clock({timerLabel, clock}: clockProps) {
   return (
     <div>
       <br />
