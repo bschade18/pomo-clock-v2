@@ -5,9 +5,8 @@ import SessionLength from './components/SessionLength';
 import ControlClock from './components/ControlClock';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  
+    state = {
       timerLabel: 'Session',
       breakLength: 5,
       sessionLength: 25,
@@ -15,12 +14,14 @@ class App extends React.Component {
       start: false,
       intervalID: '',
     };
-  }
+  
 
   clock = () => {
     let minutes = Math.floor(this.state.timer / 60);
     let seconds = this.state.timer - minutes * 60;
+    // @ts-ignore
     minutes = minutes < 10 ? '0' + minutes : minutes;
+    // @ts-ignore
     seconds = seconds < 10 ? '0' + seconds : seconds;
     return minutes + ':' + seconds;
   };
@@ -35,6 +36,7 @@ class App extends React.Component {
       this.setState({
         start: false,
       });
+      // @ts-ignore
       clearInterval(this.state.intervalID);
     }
   };
@@ -48,6 +50,7 @@ class App extends React.Component {
       start: false,
       timerLabel: 'Session',
     });
+    // @ts-ignore
     clearInterval(this.state.intervalID);
   };
 
@@ -128,12 +131,15 @@ class App extends React.Component {
 
   playBeep = () => {
     const beep = document.getElementById('beep');
+    // @ts-ignore
     beep.play();
   };
 
   pauseBeep = () => {
     const beep = document.getElementById('beep');
+    // @ts-ignore
     beep.pause();
+    // @ts-ignore
     beep.currentTime = 0;
   };
 

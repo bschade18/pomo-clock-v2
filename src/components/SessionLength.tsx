@@ -2,10 +2,10 @@ import React from "react";
 
 
 interface sessionLengthProps {
-  breakLength: string,
+  breakLength: number,
   breakDecrement: () => void,
   breakIncrement: () => void,
-  sessionLength: string,
+  sessionLength: number,
   sessionDecrement: () => void,
   sessionIncrement: () => void
 }
